@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="flex gap-6">
             {[
               { icon: Github, href: "https://github.com/Joseph-Nostra" },
-              { icon: Linkedin, href: "https://linkedin.com" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/youssef-zhar-a758853aa/" },
               { icon: Mail, href: "mailto:youssefzh850@gmail.com" }
             ].map((social, i) => (
               <motion.a

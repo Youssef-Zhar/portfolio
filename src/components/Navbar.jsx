@@ -108,7 +108,7 @@ const Navbar = () => {
       title: "Connexion",
       items: [
         { label: "Contact", href: "#contact", icon: <Mail size={16} />, desc: "Envoyez-moi un message direct." },
-        { label: "LinkedIn", href: "https://linkedin.com", icon: <Linkedin size={16} />, desc: "Rejoignez mon réseau professionnel." },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/youssef-zhar-a758853aa/", icon: <Linkedin size={16} />, desc: "Rejoignez mon réseau professionnel." },
         { label: "WhatsApp", href: "https://wa.me/yournumber", icon: <MessageSquare size={16} />, desc: "Discutons de votre projet." }
       ]
     }
