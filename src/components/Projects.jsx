@@ -130,13 +130,13 @@ const ProjectCard = ({ title, category, problem, solution, result, tags, link, i
 const Projects = () => {
   const projects = [
     {
-      title: "Plateforme Académique",
+      title: "LEXIGAME",
       category: "Projet Académique",
-      problem: "Concevoir une plateforme web académique robuste combinant gestion dynamique des données et interface réactive durant ma formation.",
-      solution: "Développement d'une architecture fullstack intégrant Laravel pour l'API backend et React pour une interface réactive et moderne connectée à MySQL.",
-      result: "Projet académique validé avec succès, offrant des performances élevées et une excellente ergonomie utilisateur.",
-      tags: ["Laravel", "React", "MySQL", "Fullstack"],
-      link: "https://mon-site-two-nu.vercel.app/"
+      problem: "Développer une plateforme e-commerce complète avec des espaces distincts pour les clients, vendeurs et administrateurs.",
+      solution: "Création d'une application full-stack avec React, Laravel et MySQL, incluant l'authentification, la gestion des produits, le panier, les commandes et les tableaux de bord par rôle.",
+      result: "Une plateforme e-commerce organisée autour des rôles Client, Vendeur et Administrateur, avec gestion des commandes, paiements, livraisons, avis et retours.",
+      tags: ["React", "Laravel", "MySQL", "Docker"],
+      link: "https://github.com/Youssef-Zhar/LEXIGAME"
     },
     {
       title: "Application MERN",
