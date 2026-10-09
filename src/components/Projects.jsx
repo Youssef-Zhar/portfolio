@@ -145,7 +145,7 @@ const Projects = () => {
       solution: "Développement d'une interface frontend moderne et responsive optimisée en HTML5, CSS3 et JavaScript interactif.",
       result: "Mise en valeur efficace des services et références clients de l'entreprise avec une expérience utilisateur fluide.",
       tags: ["HTML", "CSS", "JavaScript", "Frontend"],
-      link: "https://ecs-informatique-git-main-youusef-zhrs-projects.vercel.app/index.html#references"
+      link: "https://ecs-informatique-git-main-youusef-zhrs-projects.vercel.app/"
     }
   ];
 
