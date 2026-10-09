@@ -5,7 +5,6 @@ import Approach from './components/Approach';
 import Stats from './components/Stats';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import CreativeThree from './components/CreativeThree';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -33,7 +32,6 @@ function App() {
                 <About />
                 <Approach />
                 <Skills />
-                <CreativeThree />
                 <Projects />
                 <Contact />
               </main>
