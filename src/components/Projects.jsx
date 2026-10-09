@@ -130,15 +130,6 @@ const ProjectCard = ({ title, category, problem, solution, result, tags, link, i
 const Projects = () => {
   const projects = [
     {
-      title: "Plateforme Académique",
-      category: "Projet Académique",
-      problem: "Concevoir une plateforme web académique robuste combinant gestion dynamique des données et interface réactive durant ma formation.",
-      solution: "Développement d'une architecture fullstack intégrant Laravel pour l'API backend et React pour une interface réactive et moderne connectée à MySQL.",
-      result: "Projet académique validé avec succès, offrant des performances élevées et une excellente ergonomie utilisateur.",
-      tags: ["Laravel", "React", "MySQL", "Fullstack"],
-      link: "https://mon-site-two-nu.vercel.app/"
-    },
-    {
       title: "Application MERN",
       category: "Projet Personnel",
       problem: "Créer une solution full-stack moderne pour la gestion et le traitement réactif des données avec authentification sécurisée.",
@@ -162,7 +153,7 @@ const Projects = () => {
     <section id="projects" className="py-32">
       <div className="mb-24">
         <h2 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter">Études de <span className="text-accent-blue">Cas</span></h2>
-        <p className="text-gray-500 uppercase tracking-[0.4em] text-xs font-bold font-orbitron">Sélection de mes 3 projets clés</p>
+        <p className="text-gray-500 uppercase tracking-[0.4em] text-xs font-bold font-orbitron">Sélection de mes 2 projets clés</p>
       </div>
 
       <div className="space-y-24">
@@ -173,7 +164,7 @@ const Projects = () => {
       
       <div className="mt-32 p-12 glass-card rounded-[3rem] border border-white/5 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-accent-blue/5 blur-[100px] -z-10"></div>
-        <h3 className="text-3xl font-black mb-6 uppercase tracking-widest">3 Projets Majeurs en Ligne</h3>
+        <h3 className="text-3xl font-black mb-6 uppercase tracking-widest">2 Projets Présentés</h3>
         <p className="text-gray-400 mb-10 max-w-2xl mx-auto">Explorez mes créations en ligne et découvrez mes travaux open-source sur GitHub.</p>
         <a 
           href="https://github.com/Joseph-Nostra" 
