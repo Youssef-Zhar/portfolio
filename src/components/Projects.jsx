@@ -130,6 +130,15 @@ const ProjectCard = ({ title, category, problem, solution, result, tags, link, i
 const Projects = () => {
   const projects = [
     {
+      title: "LEXIGAME",
+      category: "Projet Académique",
+      problem: "Centraliser les achats en ligne et gérer les différents besoins des clients, vendeurs et administrateurs dans une seule application.",
+      solution: "Développement d'une plateforme e-commerce full-stack avec React, Laravel, MySQL et Docker, intégrant des espaces dédiés selon le rôle de l'utilisateur.",
+      result: "Une application organisée autour de la gestion des produits, du panier, des commandes, des livraisons, des avis et des retours.",
+      tags: ["React", "Laravel", "MySQL", "Docker", "REST API"],
+      link: "https://github.com/Joseph-Nostra/LEXIGAME"
+    },
+    {
       title: "Application MERN",
       category: "Projet Personnel",
       problem: "Créer une solution full-stack moderne pour la gestion et le traitement réactif des données avec authentification sécurisée.",
@@ -153,7 +162,7 @@ const Projects = () => {
     <section id="projects" className="py-32">
       <div className="mb-24">
         <h2 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter">Études de <span className="text-accent-blue">Cas</span></h2>
-        <p className="text-gray-500 uppercase tracking-[0.4em] text-xs font-bold font-orbitron">Sélection de mes 2 projets clés</p>
+        <p className="text-gray-500 uppercase tracking-[0.4em] text-xs font-bold font-orbitron">Sélection de mes 3 projets clés</p>
       </div>
 
       <div className="space-y-24">
@@ -164,7 +173,7 @@ const Projects = () => {
       
       <div className="mt-32 p-12 glass-card rounded-[3rem] border border-white/5 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-accent-blue/5 blur-[100px] -z-10"></div>
-        <h3 className="text-3xl font-black mb-6 uppercase tracking-widest">2 Projets Présentés</h3>
+        <h3 className="text-3xl font-black mb-6 uppercase tracking-widest">3 Projets Présentés</h3>
         <p className="text-gray-400 mb-10 max-w-2xl mx-auto">Explorez mes créations en ligne et découvrez mes travaux open-source sur GitHub.</p>
         <a 
           href="https://github.com/Joseph-Nostra" 
