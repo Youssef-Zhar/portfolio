@@ -52,15 +52,13 @@ const StatCard = ({ value, label, delay, color }) => (
 
 const Stats = () => {
   const stats = [
-    { value: "2+", label: "Ans d'Expérience", color: "from-accent-blue to-transparent" },
-    { value: "3+", label: "Projets Terminés", color: "from-accent-purple to-transparent" },
-    { value: "99%", label: "Score Performance", color: "from-emerald-500 to-transparent" },
-    { value: "100%", label: "Satisfaction Client", color: "from-amber-500 to-transparent" }
+    { value: "2", label: "Projets présentés", color: "from-accent-blue to-transparent" },
+    { value: "2026", label: "DTS obtenu", color: "from-accent-purple to-transparent" }
   ];
 
   return (
     <section className="py-20">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto gap-8">
         {stats.map((stat, index) => (
           <StatCard key={index} {...stat} delay={index * 0.1} />
         ))}
