@@ -96,7 +96,7 @@ const Resume = () => {
                   'Gestion des produits, catégories, panier, commandes, paiements, livraisons, avis et demandes de retour.',
                   'Utilisation d’une API REST, de Docker Compose et de GitHub Actions pour l’intégration continue.'
                 ]}
-                links={[{ label: 'Code source — GitHub / LEXIGAME', href: 'https://github.com/Joseph-Nostra/LEXIGAME', icon: 'github' }]}
+                links={[{ label: 'Code source — GitHub / LEXIGAME', href: 'https://github.com/Youssef-Zhar/LEXIGAME', icon: 'github' }]}
               />
               <Project
                 title="MERN E-commerce"
@@ -108,7 +108,7 @@ const Resume = () => {
                   'Notifications en temps réel avec Pusher et factures téléchargeables ou imprimables.',
                   'Déploiement sur Vercel avec un paiement simulé pour le processus de commande.'
                 ]}
-                links={[{ label: 'Démo — react-sooty-eta.vercel.app', href: 'https://react-sooty-eta.vercel.app', icon: 'external' }]}
+                links={[{ label: 'Démo — react-sooty-eta.vercel.app', href: 'https://react-sooty-eta.vercel.app', icon: 'external' }, { label: 'Code source — GitHub / MERN E-commerce', href: 'https://github.com/Youssef-Zhar/mern-ecommerce', icon: 'github' }]}
               />
               <Project
                 title="Wiam Cookies"
@@ -120,7 +120,7 @@ const Resume = () => {
                   'Développement de composants réutilisables et adaptation de l’interface aux différents écrans.',
                   'Déploiement sur Vercel et utilisation d’Oxlint pour l’analyse du code.'
                 ]}
-                links={[{ label: 'Site en ligne — wiam-cookies.vercel.app', href: 'https://wiam-cookies.vercel.app', icon: 'external' }]}
+                links={[{ label: 'Site en ligne — wiam-cookies.vercel.app', href: 'https://wiam-cookies.vercel.app', icon: 'external' }, { label: 'Code source — GitHub / WiamCookies', href: 'https://github.com/Youssef-Zhar/WiamCookies', icon: 'github' }]}
               />
             </section>
           </div>
