@@ -52,7 +52,7 @@ const StatCard = ({ value, label, delay, color }) => (
 
 const Stats = () => {
   const stats = [
-    { value: "2", label: "Projets présentés", color: "from-accent-blue to-transparent" },
+    { value: "3", label: "Projets présentés", color: "from-accent-blue to-transparent" },
     { value: "2026", label: "DTS obtenu", color: "from-accent-purple to-transparent" }
   ];
 
