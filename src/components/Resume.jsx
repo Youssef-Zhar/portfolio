@@ -1,275 +1,185 @@
-﻿import React from 'react';
-import { ExternalLink } from 'lucide-react';
-import profileImg from '../assets/profile_new.jpg';
+import React from 'react';
+import { ExternalLink, Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+
+const SectionTitle = ({ children }) => (
+  <h2 className="mb-2 border-b border-slate-200 pb-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-800">
+    {children}
+  </h2>
+);
+
+const Project = ({ title, kind, stack, bullets, links = [] }) => (
+  <article className="mb-3 break-inside-avoid">
+    <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+      <h3 className="text-[11px] font-bold text-slate-900">{title}</h3>
+      <span className="text-[9px] font-semibold italic text-slate-500">{kind}</span>
+    </div>
+    <p className="mb-1 text-[9px] font-medium text-slate-600">{stack}</p>
+    <ul className="list-disc space-y-[1px] pl-4 text-[9px] leading-[1.35] text-slate-700">
+      {bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+    </ul>
+    {links.length > 0 && (
+      <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[9px] font-semibold text-slate-600">
+        {links.map((link) => (
+          <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-slate-950">
+            {link.icon === 'github' ? <Github size={10} /> : <ExternalLink size={10} />}
+            {link.label}
+          </a>
+        ))}
+      </div>
+    )}
+  </article>
+);
 
 const Resume = () => {
   return (
-    <div className="min-h-screen print:min-h-0 print:h-auto bg-white text-gray-900 p-8 md:p-16 print:p-0 font-serif">
-      {/* Print/Download Button (Hidden in Print) */}
-      <div className="max-w-4xl mx-auto mb-8 flex justify-end print:hidden">
+    <main className="min-h-screen bg-slate-100 px-3 py-6 text-slate-800 print:min-h-0 print:bg-white print:p-0">
+      <div className="mx-auto mb-4 flex max-w-[210mm] justify-end print:hidden">
         <button
           onClick={() => window.print()}
-          className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-all font-sans font-bold text-sm tracking-widest uppercase shadow-lg border-none cursor-pointer"
+          className="rounded-md bg-slate-900 px-4 py-2 text-xs font-bold text-white transition hover:bg-slate-700"
         >
           Imprimer / Enregistrer en PDF
         </button>
       </div>
 
-      {/* CV Container */}
-      <div id="resume-container" className="max-w-4xl mx-auto bg-white shadow-2xl print:shadow-none border border-gray-100 print:border-none p-0 mt-4">
-
-        {/* Header - Navbar Style */}
-        <header className="bg-gray-900 px-8 py-10 flex flex-row justify-between items-center gap-8 print:py-8">
-          <div className="flex-1 space-y-6">
-            <div className="text-left">
-              <h1 className="text-4xl font-black uppercase tracking-tighter mb-1 text-white leading-tight">YOUSSEF ZHAR</h1>
-              <div className="inline-block px-3 py-1 bg-gray-800 rounded text-xs font-bold text-gray-300 uppercase tracking-widest font-sans">
-                Développeur Web Full Stack
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-[11px] font-sans text-gray-400 print:grid-cols-2">
-              <div className="flex items-center gap-2">
-                <span>Skhirate Lot Maatouka 87</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <a href="mailto:youssefzh850@gmail.com" className="hover:text-white transition-colors">youssefzh850@gmail.com</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span>06 82 96 63 18</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <a href="https://github.com/Joseph-Nostra" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">github.com/Joseph-Nostra</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-28 h-32 md:w-32 md:h-36 rounded border-2 border-gray-800 overflow-hidden shadow-2xl shrink-0 bg-gray-800 print:w-28 print:h-32">
-            <img 
-              src={profileImg} 
-              alt="Youssef Zhar" 
-              className="w-full h-full object-cover"
-            />
+      <article id="resume-container" className="mx-auto max-w-[210mm] bg-white px-7 py-6 shadow-xl print:max-w-none print:shadow-none print:px-0 print:py-0">
+        <header className="border-b-2 border-slate-900 pb-3">
+          <h1 className="text-2xl font-black tracking-tight text-slate-950">YOUSSEF ZHAR</h1>
+          <p className="mt-1 text-[12px] font-extrabold uppercase tracking-[0.12em] text-slate-700">Développeur Full Stack Junior</p>
+          <p className="mt-1 text-[10px] font-semibold text-slate-600">React.js · Laravel · PHP · Node.js</p>
+          <div className="mt-3 grid grid-cols-1 gap-x-4 gap-y-1 text-[9px] text-slate-600 sm:grid-cols-2 print:grid-cols-2">
+            <span className="flex items-center gap-1.5"><MapPin size={10} /> Skhirat – Témara – Rabat, Maroc</span>
+            <a className="flex items-center gap-1.5" href="mailto:youssefzh850@gmail.com"><Mail size={10} /> youssefzh850@gmail.com</a>
+            <a className="flex items-center gap-1.5" href="tel:+212682966318"><Phone size={10} /> 0682966318</a>
+            <a className="flex items-center gap-1.5" href="https://linkedin.com/in/youssef-zhar-a758853aa" target="_blank" rel="noreferrer"><Linkedin size={10} /> linkedin.com/in/youssef-zhar-a758853aa</a>
+            <a className="flex items-center gap-1.5" href="https://github.com/Youssef-Zhar" target="_blank" rel="noreferrer"><Github size={10} /> github.com/Youssef-Zhar</a>
           </div>
         </header>
 
-        <div className="p-8 flex flex-row gap-6 items-start">
-          {/* Left Column (Sidebar) */}
-          <div className="w-[30%] space-y-6 shrink-0">
+        <section className="mt-3 break-inside-avoid">
+          <SectionTitle>Profil professionnel</SectionTitle>
+          <p className="text-[9.5px] leading-[1.4] text-slate-700">
+            Développeur web full stack junior, titulaire d’un DTS en Développement Digital, option Développement Web Full-Stack.
+            J’ai acquis une expérience pratique en intégration web lors d’un stage chez ECS Informatique et développé plusieurs
+            projets académiques et personnels. Compétences en développement front-end et back-end, conception d’API REST,
+            gestion de bases de données et déploiement d’applications web.
+          </p>
+        </section>
 
-            {/* Compétences */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-6">COMPÉTENCES</h2>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-gray-900 mb-3 border-b border-gray-200 pb-1">Frontend</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 font-sans">
-                    <li>React.js</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>HTML5 / CSS3</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-gray-900 mb-3 border-b border-gray-200 pb-1">Backend</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 font-sans">
-                    <li>Laravel</li>
-                    <li>PHP</li>
-                    <li>API REST</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-gray-900 mb-3 border-b border-gray-200 pb-1">Base de données</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 font-sans">
-                    <li>MySQL</li>
-                    <li>MongoDB</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-gray-900 mb-3 border-b border-gray-200 pb-1">Outils</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 font-sans">
-                    <li>Git / GitHub / GitLab</li>
-                    <li>Docker</li>
-                    <li>Jira (Agile Scrum) / UML</li>
-                    <li>SonarQube / SonarScanner</li>
-                    <li>Canvas / Figma</li>
-                  </ul>
-                </div>
+        <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] print:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] print:gap-4">
+          <div className="min-w-0">
+            <section className="mb-3 break-inside-avoid">
+              <SectionTitle>Expérience professionnelle</SectionTitle>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                <h3 className="text-[11px] font-bold text-slate-900">Stagiaire en développement web — ECS Informatique</h3>
+                <span className="text-[9px] text-slate-500">Avril – Mai 2026</span>
+              </div>
+              <p className="mb-1 text-[9px] italic text-slate-500">Rabat-Souissi</p>
+              <ul className="list-disc space-y-[1px] pl-4 text-[9px] leading-[1.35] text-slate-700">
+                <li>Intégration et amélioration de pages web avec HTML5, CSS3, Bootstrap et JavaScript.</li>
+                <li>Développement d’interactions front-end avec jQuery et adaptation responsive des interfaces.</li>
+                <li>Participation à l’amélioration d’un site institutionnel présentant les services, les offres et un formulaire de candidature.</li>
+                <li>Adaptation du projet vers une version statique pour faciliter son hébergement et son déploiement sur Vercel.</li>
+              </ul>
+              <p className="mt-1 text-[9px] text-slate-600">Projet en ligne : <a className="font-semibold underline" href="https://ecs-informatique.vercel.app" target="_blank" rel="noreferrer">ecs-informatique.vercel.app</a></p>
+            </section>
+
+            <section className="mb-3">
+              <SectionTitle>Projets informatiques</SectionTitle>
+              <Project
+                title="LEXIGAME"
+                kind="Projet académique"
+                stack="React 19 · Laravel 12 · PHP 8.3 · MySQL 8 · Docker Compose · GitHub Actions"
+                bullets={[
+                  'Développement d’une application e-commerce full stack avec trois espaces : Client, Vendeur et Administrateur.',
+                  'Mise en place de l’authentification avec Laravel Sanctum et du contrôle d’accès basé sur les rôles.',
+                  'Gestion des produits, catégories, panier, commandes, paiements, livraisons, avis et demandes de retour.',
+                  'Utilisation d’une API REST, de Docker Compose et de GitHub Actions pour l’intégration continue.'
+                ]}
+                links={[{ label: 'Code source — GitHub / LEXIGAME', href: 'https://github.com/Joseph-Nostra/LEXIGAME', icon: 'github' }]}
+              />
+              <Project
+                title="MERN E-commerce"
+                kind="Projet personnel"
+                stack="React · Node.js · Express.js · MongoDB · Mongoose · Pusher · Chart.js"
+                bullets={[
+                  'Développement d’une plateforme e-commerce avec catalogue, recherche, filtres, panier, wishlist et historique des commandes.',
+                  'Création d’un tableau de bord administrateur pour gérer produits, catégories, utilisateurs, commandes et stocks.',
+                  'Notifications en temps réel avec Pusher et factures téléchargeables ou imprimables.',
+                  'Déploiement sur Vercel avec un paiement simulé pour le processus de commande.'
+                ]}
+                links={[{ label: 'Démo — react-sooty-eta.vercel.app', href: 'https://react-sooty-eta.vercel.app', icon: 'external' }]}
+              />
+              <Project
+                title="Wiam Cookies"
+                kind="Projet personnel"
+                stack="React · TypeScript · Vite · Tailwind CSS · Vercel"
+                bullets={[
+                  'Conception d’un site vitrine responsive dédié à une marque de pâtisserie.',
+                  'Galerie de produits et de créations personnalisées avec une identité visuelle moderne.',
+                  'Développement de composants réutilisables et adaptation de l’interface aux différents écrans.',
+                  'Déploiement sur Vercel et utilisation d’Oxlint pour l’analyse du code.'
+                ]}
+                links={[{ label: 'Site en ligne — wiam-cookies.vercel.app', href: 'https://wiam-cookies.vercel.app', icon: 'external' }]}
+              />
+            </section>
+          </div>
+
+          <aside className="min-w-0 space-y-3">
+            <section className="break-inside-avoid">
+              <SectionTitle>Formation</SectionTitle>
+              <div className="mb-2">
+                <h3 className="text-[10px] font-bold text-slate-900">DTS — Développement Digital</h3>
+                <p className="text-[9px] leading-[1.35] text-slate-700">Option Développement Web Full-Stack</p>
+                <p className="text-[9px] text-slate-500">ISTA Témara — OFPPT · 2024–2026</p>
+                <p className="text-[9px] font-semibold text-slate-700">Diplôme obtenu en 2026 — Mention Bien</p>
+              </div>
+              <div>
+                <h3 className="text-[10px] font-bold text-slate-900">Baccalauréat — SVT</h3>
+                <p className="text-[9px] text-slate-700">Sciences de la Vie et de la Terre</p>
+                <p className="text-[9px] text-slate-500">Lycée Tahla · 2023–2024</p>
               </div>
             </section>
 
-            {/* Langues */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-6">LANGUES</h2>
-              <ul className="text-sm space-y-3 font-sans">
-                <li className="flex justify-between items-center"><span className="font-bold">Arabe</span> <span className="text-gray-400 italic">Natif</span></li>
-                <li className="flex justify-between items-center"><span className="font-bold">Français</span> <span className="text-gray-400 italic">Bon</span></li>
-                <li className="flex justify-between items-center"><span className="font-bold">Anglais</span> <span className="text-gray-400 italic">Intermédiaire</span></li>
+            <section className="break-inside-avoid">
+              <SectionTitle>Compétences techniques</SectionTitle>
+              <div className="space-y-2 text-[9px] leading-[1.4]">
+                <div><h3 className="font-bold text-slate-900">Front-end</h3><p>React.js, JavaScript ES6+, TypeScript, HTML5, CSS3, Bootstrap, Tailwind CSS.</p></div>
+                <div><h3 className="font-bold text-slate-900">Back-end</h3><p>PHP, Laravel, Node.js, Express.js, API REST, Laravel Sanctum.</p></div>
+                <div><h3 className="font-bold text-slate-900">Bases de données</h3><p>MySQL, MongoDB, Mongoose.</p></div>
+                <div><h3 className="font-bold text-slate-900">Outils et déploiement</h3><p>Git, GitHub, GitLab, Docker Compose, GitHub Actions, Vercel.</p></div>
+                <div><h3 className="font-bold text-slate-900">Bibliothèques et qualité</h3><p>React Router, Redux Toolkit, Context API, Axios, Pusher, Chart.js, ESLint, Oxlint.</p></div>
+              </div>
+            </section>
+
+            <section className="break-inside-avoid">
+              <SectionTitle>Langues</SectionTitle>
+              <ul className="space-y-1 text-[9px]">
+                <li><span className="font-bold">Arabe :</span> langue maternelle</li>
+                <li><span className="font-bold">Français :</span> intermédiaire</li>
+                <li><span className="font-bold">Anglais :</span> intermédiaire</li>
               </ul>
             </section>
 
-            {/* Intérêts */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-4">INTÉRÊTS</h2>
-              <ul className="text-[11px] space-y-1 text-gray-600 font-sans">
-                <li>Dév. Web & Tech</li>
-                <li>Projets Digitaux</li>
-                <li>Entrepreneuriat</li>
-                <li>Auto-apprentissage</li>
-              </ul>
+            <section className="break-inside-avoid">
+              <SectionTitle>Centres d’intérêt</SectionTitle>
+              <p className="text-[9px] leading-[1.4]">Développement web, conception d’applications, nouvelles technologies et projets personnels.</p>
             </section>
-
-          </div>
-
-          {/* Right Column (Main Content) */}
-          <div className="w-[70%] space-y-6 border-l border-gray-100 pl-6 shrink-0 overflow-visible">
-
-            {/* Profil */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mb-4 flex items-center gap-3">
-                <span className="w-6 h-px bg-gray-300"></span> PROFIL
-              </h2>
-              <p className="text-sm leading-relaxed text-gray-700 italic">
-                Développeur Full Stack passionné par la création d’applications web modernes et performantes. Je maîtrise les technologies comme <span className="font-bold text-gray-900">React</span> et <span className="font-bold text-gray-900">Laravel</span> ainsi que la conception d’API REST. Curieux, motivé et rigoureux, je suis actuellement à la recherche d’un stage afin de mettre en pratique mes compétences techniques et contribuer à des projets concrets.
-              </p>
-            </section>
-
-            {/* Expériences */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mb-4 flex items-center gap-3">
-                <span className="w-6 h-px bg-gray-300"></span> EXPÉRIENCES PROFESSIONNELLES
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-base font-bold uppercase tracking-tight text-gray-900">ECS Informatique</h3>
-                    <span className="text-[11px] font-sans text-gray-400 italic">Stage (1 mois)</span>
-                  </div>
-                  <p className="text-[13px] text-gray-800 font-bold mb-1">Sujet : Améliorer un site web</p>
-                  <p className="text-[12px] text-gray-600 leading-relaxed italic">
-                    Rabat Souissi – 54 Avenue Mehdi Ben Barka
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Projets */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mb-4 flex items-center gap-3">
-                <span className="w-6 h-px bg-gray-300"></span> PROJETS ACADÉMIQUES
-              </h2>
-              <div className="space-y-6">
-                <div className="group">
-                  <h3 className="text-lg font-bold mb-1 flex items-center gap-3 group-hover:text-gray-600 transition-colors">
-                    Site E-commerce (Laravel + React + MySQL)
-                  </h3>
-                  <p className="text-gray-600 mb-2 font-sans text-[11px]">Technologies : Laravel, React, MySQL, API REST</p>
-                  <p className="text-gray-700 leading-relaxed text-[13px] mb-3">
-                    Plateforme e-commerce avec gestion des produits et panier dynamique.
-                  </p>
-                  <a href="https://mon-site-two-nu.vercel.app/" className="text-[10px] font-black text-gray-400 hover:text-gray-900 flex items-center gap-2 transition-colors">
-                    <ExternalLink size={10} /> https://mon-site-two-nu.vercel.app/
-                  </a>
-                </div>
-
-                <div className="group">
-                  <h3 className="text-lg font-bold mb-1 flex items-center gap-3 group-hover:text-gray-600 transition-colors">
-                    Portfolio Immersif
-                  </h3>
-                  <p className="text-gray-600 mb-2 font-sans text-[11px]">Technologies : React, Three.js, Framer Motion, Tailwind</p>
-                  <p className="text-gray-700 leading-relaxed text-[13px] mb-3">
-                    Portfolio interactif avec animations 3D et design moderne.
-                  </p>
-                  <a href="https://portfolio-beta-one-jyc1duefh6.vercel.app/" className="text-[10px] font-black text-gray-400 hover:text-gray-900 flex items-center gap-2 transition-colors">
-                    <ExternalLink size={10} /> https://portfolio-beta-one-jyc1duefh6.vercel.app/
-                  </a>
-                </div>
-              </div>
-            </section>
-
-            {/* Formations */}
-            <section>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mb-4 flex items-center gap-3">
-                <span className="w-6 h-px bg-gray-300"></span> FORMATIONS
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-base font-bold uppercase tracking-tight">ISTA Témara</h3>
-                    <span className="text-[11px] font-sans text-gray-400 italic">2024 – 2026</span>
-                  </div>
-                  <p className="text-[13px] text-gray-700">Développement Digital – Option Full Stack</p>
-                </div>
-                <div>
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-base font-bold uppercase tracking-tight">Programme PIE</h3>
-                    <span className="text-[11px] font-sans text-gray-400 italic">2024 – 2026</span>
-                  </div>
-                  <p className="text-[13px] text-gray-700">Innovation & Entrepreneuriat (Gestion de projet)</p>
-                </div>
-                <div>
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-base font-bold uppercase tracking-tight">Lycée Tahla</h3>
-                    <span className="text-[11px] font-sans text-gray-400 italic">2023 – 2024</span>
-                  </div>
-                  <p className="text-[13px] text-gray-700">Baccalauréat Sciences de la Vie et de la Terre</p>
-                </div>
-              </div>
-            </section>
-          </div>
+          </aside>
         </div>
+      </article>
 
-        {/* Footer */}
-        <footer className="mt-10 pb-10 text-center text-gray-400 text-[9px] uppercase tracking-[0.5em] font-sans">
-          YOUSSEF ZHAR • DÉVELOPPEUR FULL STACK • 2025
-        </footer>
-      </div>
-
-
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style>{`
+        @page { size: A4; margin: 9mm; }
         @media print {
-          @page { size: A4; margin: 0; }
-          html, body { 
-            margin: 0 !important; 
-            padding: 0 !important; 
-            width: 100% !important;
-            height: auto !important;
-            -webkit-print-color-adjust: exact; 
-            print-color-adjust: exact; 
-          }
-          #resume-container { 
-            border: none !important; 
-            box-shadow: none !important; 
-            width: 100% !important; 
-            max-width: none !important; 
-            margin: 0 !important; 
-            padding: 0 !important;
-            overflow: visible; 
-          }
-          header { 
-            width: 100% !important;
-            box-sizing: border-box !important;
-            flex-direction: row !important; 
-            align-items: center !important; 
-            justify-content: space-between !important; 
-            text-align: left !important; 
-            padding: 2rem 2.5rem !important;
-            margin: 0 !important;
-          }
-          header > div:first-child { text-align: left !important; align-items: flex-start !important; }
-          .print\\:hidden { display: none !important; }
-          .print\\:p-0 { padding: 0 !important; }
-          .print\\:shadow-none { shadow: none !important; box-shadow: none !important; }
-          .print\\:border-none { border: none !important; }
-          .p-8 { padding: 2.5rem !important; }
-          .space-y-6 > * + * { margin-top: 1rem !important; }
-          .space-y-4 > * + * { margin-top: 0.5rem !important; }
-          .mb-6 { margin-bottom: 1rem !important; }
-          .mb-4 { margin-bottom: 0.5rem !important; }
-          img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          html, body { margin: 0 !important; padding: 0 !important; background: #fff !important; }
+          body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          #resume-container { width: 100% !important; max-width: none !important; margin: 0 !important; }
+          a { color: inherit !important; text-decoration: none !important; }
+          .break-inside-avoid { break-inside: avoid; page-break-inside: avoid; }
         }
-      `}} />
-    </div>
+      `}</style>
+    </main>
   );
 };
 
