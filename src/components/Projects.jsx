@@ -136,7 +136,7 @@ const Projects = () => {
       solution: "Développement d'une plateforme e-commerce full-stack avec React, Laravel, MySQL et Docker, intégrant des espaces dédiés selon le rôle de l'utilisateur.",
       result: "Une application organisée autour de la gestion des produits, du panier, des commandes, des livraisons, des avis et des retours.",
       tags: ["React", "Laravel", "MySQL", "Docker", "REST API"],
-      link: "https://github.com/Joseph-Nostra/LEXIGAME"
+      link: "https://lexigame.vercel.app/"
     },
     {
       title: "Application MERN",
