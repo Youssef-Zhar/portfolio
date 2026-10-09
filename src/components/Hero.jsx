@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/profile.jpg';
 import { Link } from 'react-router-dom';
+import FaceHelmetOverlay from './FaceHelmetOverlay';
 
 const Hero = () => {
   return (
@@ -107,6 +108,7 @@ const Hero = () => {
             alt="Youssef Zhar"
             className="w-full h-full object-cover rounded-t-[15rem] mask-gradient brightness-75 hover:brightness-100 transition-all duration-1000 grayscale hover:grayscale-0"
           />
+          <FaceHelmetOverlay />
           <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
         </motion.div>
       </div>
