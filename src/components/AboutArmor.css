@@ -1,0 +1,94 @@
+/* Hover-only armor effect: no sticky touch state on phones/tablets. */
+.portrait-stage {
+  isolation: isolate;
+}
+
+.armor-overlay {
+  opacity: 0;
+  transform: scale(1.035);
+  transition: opacity 650ms cubic-bezier(.22, 1, .36, 1), transform 900ms cubic-bezier(.22, 1, .36, 1);
+  mix-blend-mode: screen;
+}
+
+.armor-art {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(29, 224, 255, .12));
+}
+
+.armor-scanline {
+  position: absolute;
+  inset: -100% 0 auto;
+  height: 35%;
+  opacity: 0;
+  background: linear-gradient(180deg, transparent, rgba(60, 247, 255, .12), transparent);
+  transform: skewY(-8deg);
+}
+
+.armor-flare {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 76%, rgba(43, 239, 255, .23), transparent 24%),
+              linear-gradient(115deg, transparent 32%, rgba(255, 64, 55, .1) 49%, transparent 65%);
+}
+
+.reactor-ring {
+  transform-origin: 250px 385px;
+  animation: reactor-pulse 2.4s ease-in-out infinite;
+}
+
+.energy-trace {
+  stroke-dasharray: 8 8;
+  animation: energy-flow 1.8s linear infinite;
+}
+
+.energy-trace-delay {
+  animation-delay: -.8s;
+}
+
+@keyframes reactor-pulse {
+  0%, 100% { opacity: .62; stroke-width: 2; }
+  50% { opacity: 1; stroke-width: 4; }
+}
+
+@keyframes energy-flow {
+  to { stroke-dashoffset: -32; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portrait-stage:hover .armor-overlay {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .portrait-stage:hover .armor-scanline {
+    opacity: 1;
+    animation: scan-pass 1.7s ease-out 1;
+  }
+
+  .portrait-stage:hover .armor-flare {
+    opacity: 1;
+    transition: opacity 700ms ease;
+  }
+}
+
+@keyframes scan-pass {
+  from { top: -35%; }
+  to { top: 110%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .armor-overlay,
+  .armor-scanline,
+  .armor-flare {
+    transition: none;
+    animation: none;
+  }
+
+  .reactor-ring,
+  .energy-trace {
+    animation: none;
+  }
+}
