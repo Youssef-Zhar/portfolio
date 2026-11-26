@@ -1,16 +1,59 @@
-# React + Vite
+# Youssef Zhar — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personnel de **Youssef Zhar**, développeur Web Full-Stack junior basé au Maroc. Le site présente mon parcours, mes compétences, mes projets et mes coordonnées.
 
-Currently, two official plugins are available:
+🌐 **Portfolio en ligne :** https://portfolio-beta-one-jyc1duefh7.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Présentation
 
-## React Compiler
+Je suis titulaire d'un **DTS Développement Digital, option Développement Web Full-Stack (OFPPT — ISTA Témara, 2026)**. Je m'intéresse particulièrement au développement backend avec PHP/Laravel, ainsi qu'à la création d'interfaces web avec React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ce portfolio est une application frontend conçue pour présenter mon profil et mes réalisations.
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite
+- JavaScript
+- React Router
+- Three.js, React Three Fiber et Drei
+- Framer Motion
+- Tailwind CSS
+- Lucide React
+
+## Fonctionnalités et sections
+
+Le site organise la présentation autour des sections suivantes : accueil, à propos, approche, statistiques, compétences, projets, contact et informations complémentaires. L'interface utilise des animations et des éléments 3D.
+
+## Lancer le projet en local
+
+Prérequis : Node.js et npm.
+
+```bash
+git clone https://github.com/Youssef-Zhar/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Vite affiche l'adresse locale dans le terminal.
+
+## Vérifications
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+## Liens
+
+- **Portfolio :** https://portfolio-beta-one-jyc1duefh7.vercel.app/
+- **GitHub :** https://github.com/Youssef-Zhar
+- **LinkedIn :** https://linkedin.com/in/youssef-zhar-a758853aa/
+
+## Auteur
+
+**Youssef Zhar** — Développeur Web Full-Stack junior.
+
+Ce projet est un portfolio personnel.
